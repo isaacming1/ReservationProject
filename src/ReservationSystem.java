@@ -11,6 +11,7 @@ public class ReservationSystem {
                         reservations[numberOfreservations++] = reservation;
                 }
         }
+
         public static void displayReservations() {
                 for (int counter = 0; counter < numberOfreservations; counter++) {
                         System.out.println("Reservation " + " " + (counter + 1));
@@ -22,27 +23,28 @@ public class ReservationSystem {
         public static void sortReservations() {
                 int counter = reservations.length;
                 for (int x = 0; x < counter - 1; x++) {
-                        if (reservations[x].timeMadereservation < reservations[x].timeMadereservation) {
-
-
+                        for (int y = x + 1; y < counter; y++) {
+                                if (reservations[x] != null && reservations[y] != null
+                                        && reservations[x].timeMadereservation > reservations[y].timeMadereservation) {
+                                        Reservation q = reservations[x];
+                                        reservations[x] = reservations[y];
+                                        reservations[y] = q;
+                                }
                         }
-
                 }
-
-
-
-
-
-
-
-
         }
+}
 
-    // static array
+
+
+
+
+
+
+// static array
     //add reservations
     //cancelReservation
     //SortReservation
     //changeReservation
     //displayReservation
 
-}
