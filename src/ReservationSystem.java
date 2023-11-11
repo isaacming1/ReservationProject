@@ -42,18 +42,17 @@ public class ReservationSystem {
 
         }
 
-                public static void cancelReservation ( int index){
-                        if (index >= 0 && index < numberOfreservations) {
-                                reservations[index] = null;
+                              public static void cancelReservation ( int i){
+                        if (i >= 0 && i < numberOfreservations) {
+                                reservations[i] = null;
                                 System.out.println("reservation canceled");
                         } else {
                                 System.out.println("index in invalid");
                         }
                 }
-
-                public static void changeReservation ( int index, int newGroupSize){
-                        if (index >= 0 && index < numberOfreservations) {
-                                reservations[index].numberOfpeople = newGroupSize;
+                public static void changeReservation ( int i, int gs){
+                        if (i >= 0 && i < numberOfreservations) {
+                                reservations[i].numberOfpeople = gs;
                                 System.out.println("updated");
                         } else {
                                 System.out.println("index is invalid");
