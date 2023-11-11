@@ -11,6 +11,7 @@ public class ReservationSystem {
                         reservations[numberOfreservations++] = reservation;
                 }
         }
+
         public static void displayReservations() {
                 for (int counter = 0; counter < numberOfreservations; counter++) {
                         System.out.println("Reservation " + " " + (counter + 1));
@@ -26,9 +27,9 @@ public class ReservationSystem {
                 int counter = numberOfreservations;
                 for (int x = 0; x < counter - 1; x++) {
                         for (int y = x + 1; y < counter; y++) {
-                                if (reservations[x] != null && reservations[y] != null
-                                        && reservations[x].timeMadereservation > reservations[y].timeMadereservation) {
-                                        Reservation q = reservations[x];
+                                if (reservations[x] != null && reservations[y] != null 
+                                  && reservations[x].timeMadereservation > reservations[y].timeMadereservation) {
+                                  Reservation q = reservations[x];
                                         reservations[x] = reservations[y];
                                         reservations[y] = q;
                                 }
@@ -36,23 +37,31 @@ public class ReservationSystem {
                 }
                 displayReservations();
         }
-        public static void cancelReservation ( int x){
-                        if (x >= 0 && x < numberOfreservations) {
-                                reservations[x] = null;
-                                System.out.println("reservation canceled");
-                        } else {
-                                System.out.println("index DNE");
-                        }
-                }
-        public static void changeReservation(int x, int gs) {
+
+        public static void cancelReservation(int x) {
                 if (x >= 0 && x < numberOfreservations) {
-                        reservations[x].numberOfpeople = gs;
-                        System.out.println("updated");
+                        reservations[x] = null;
+                        System.out.println("reservation canceled");
                 } else {
                         System.out.println("index DNE");
                 }
         }
+
+        public static void changeReservation(int x, int gs) {
+        if (x >= 0) {
+          if (x < numberOfreservations) {
+                         reservations[x].numberOfpeople = gs;
+                System.out.println("updated");
+                } else {
+                  System.out.println("index DNE");
+                        }
+        } else {
+                System.out.println("index DNE");
+                }
         }
+
+}
+
 
 
 
@@ -71,4 +80,5 @@ public class ReservationSystem {
     //SortReservation
     //changeReservation
     //displayReservation
+
 
