@@ -7,6 +7,8 @@ public class Reservation {
     public int timeOfreservation;
     public int timeMadereservation;
 
+
+
     public String reservationName;
 
 
@@ -57,7 +59,7 @@ public class Reservation {
 
     //  System.out.println();
 
-    //System.out.println("Sorted List:");
+    //System.out.println("Sorted List is below");
 
     //system.sortReservations();
 
@@ -82,11 +84,11 @@ public class Reservation {
                 case 1:
                     System.out.print("Enter group size: ");
                     int groupSize = scanner.nextInt();
-                    System.out.print("Enter time: ");
+                    System.out.print("Enter time of your reservation(in military time without colon): ");
                     int time = scanner.nextInt();
-                    System.out.print("Enter reservation time in military time(without colon): ");
+                    System.out.print("What time is it right now?(in military time without colon): ");
                     int reservationTime = scanner.nextInt();
-                    System.out.print("Enter reservation time in military time(without colon): ");
+                    System.out.print("Enter name: ");
                     String reservationName = scanner.next();
 
                     Reservation newReservation = new Reservation(groupSize, time, reservationTime, reservationName);
